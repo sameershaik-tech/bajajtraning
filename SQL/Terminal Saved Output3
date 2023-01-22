@@ -1,0 +1,110 @@
+Last login: Tue Jan 17 09:31:26 on ttys001
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+L-LP47KH3QG7:~ shaiksameer$ /Library/PostgreSQL/15/scripts/runpsql.sh; exit
+Server [localhost]: 
+Database [postgres]: 
+Port [5432]: 
+Username [postgres]: 
+Password for user postgres: 
+psql (15.1)
+Type "help" for help.
+
+postgres=# CREATE DATABASE DPhone;
+ERROR:  database "dphone" already exists
+postgres=# CREATE DATABASE phone;
+CREATE DATABASE
+postgres=# \c phone;
+You are now connected to database "phone" as user "postgres".
+phone=# CREATE TABLE User1(userid INT PRIMARY KEY,first_name TEXT,last_name TEXT, address TEXT NOT NULL,mobile INT NOT NULL,email TEXT,username TEXT NOT NULL,password TEXT NOT NULL);
+CREATE TABLE
+phone=# CREATE TABLE Referral(referalID INT PRIMARY KEY,First_name TEXT,referral_last_name TEXT,mobile INT NOT NULL,email TEXT NOT NULL,userId INT,date_of_referral DATE,referral_points INT,status TEXT,FOREIGN KEY(userid) REFERENCES User1(userid));
+CREATE TABLE
+phone=# CREATE TABLE Customer(customerID INT PRIMARY KEY,First_name TEXT,Last_name TEXT,email TEXT NOT NULL,mobile INT NOT NULL);
+CREATE TABLE
+phone=# CREATE TABLE BuyingDetails(customerID INT,userid INT,purchase_date DATE,product_name TEXT NOT NULL, FOREIGN KEY(customerID) REFERENCES Customer(customerID),FOREIGN KEY(userid) REFERENCES User1(userid));
+CREATE TABLE
+phone=# INSERT INTO User1 VALUES(1,'rahul','varma','Andra Pradesh', 63009, 'rahul@gmail.com', 'rahulvarma','rahulpwd'),(2,'sameer','shaik','Mumbai', 78963, 'sameer@gmail.com', 'sameershaik','sameerpwd'),(3,'hara','teja','Banglore',89652, 'harateja@gmail.com', 'harateja', 'haratejapwd'), (4,'uttej','sai','Kerala',99656, 'uttejsai@gmail.com', 'uttejsai', 'uttejpwd'),(5,'Vikyanth','Ms','TamilNadu',79626, 'vikyanth@gmail.com', 'vikyanth', 'vikyanthpwd');
+INSERT 0 5
+phone=# INSERT INTO Referral VALUES(101, 'ankit', 'lal', 45621, 'ankitlal@gmail.com', 1, '2022-09-21',1000,'done'),(102, 'suman', 'singh', 99221, 'sumansingh@gmail.com', 1, '2022-05-23',1000,'pending'),(103, 'sachin', 'ten', 65251, 'sachin@gmail.com', 3, '2022-09-21',1000,'pending'),104, 'DHONI', 'MS', 83261, 'dhoni@gmail.com', 4, '2022-02-17',1000,'done'),(105, 'Virat', 'Kohli', 93564, 'kohli@gmail.com', 5, '2022-07-05',1000,'done');
+ERROR:  syntax error at or near "104"
+LINE 1: ...achin@gmail.com', 3, '2022-09-21',1000,'pending'),104, 'DHON...
+                                                             ^
+phone=# INSERT INTO Referral VALUES(101, 'ankit', 'lal', 45621, 'ankitlal@gmail.com', 1, '2022-09-21',1000,'done'),(102, 'suman', 'singh', 99221, 'sumansingh@gmail.com', 1, '2022-05-23',1000,'pending'),(103, 'sachin', 'ten', 65251, 'sachin@gmail.com', 3, '2022-09-21',1000,'pending'),(104, 'DHONI', 'MS', 83261, 'dhoni@gmail.com', 4, '2022-02-17',1000,'done'),(105, 'Virat', 'Kohli', 93564, 'kohli@gmail.com', 5, '2022-07-05',1000,'done');
+INSERT 0 5
+phone=# INSERT INTO Customer VALUES(1001, 'Virat', 'Kohli', 'kohli@gmail.com', 93564),(1002, 'DHONI', 'MS', 'dhoni@gmail.com', 83261),(1003, 'ankit', 'lal', 'ankitlal@gmail.com', 45621),(1004, 'rick', 'roll', 'rick@gmail.com', 84856), (1005, 'odin', 'rock', 'odin@gmail.com', 56485);
+INSERT 0 5
+phone=# INSERT INTO BuyingDetails VALUES(1001,5,'2022-09-21','Iphone 14'),(1002,4,'2022-09-21','Iphone 14 pro'),(1003,1,'2022-07-04','Iphone 14'),(1004,1,'2022-11-05','Television'),(1005,3,'2022-04-18','AC');
+INSERT 0 5
+phone=# SELECT U.userid, U.first_name, U.last_name, COUNT(R.userid)  FROM User1 U INNER JOIN Referral R ON U.userid=R.userid  GROUP BY u.userID;
+ userid | first_name | last_name | count 
+--------+------------+-----------+-------
+      5 | Vikyanth   | Ms        |     1
+      4 | uttej      | sai       |     1
+      1 | rahul      | varma     |     2
+      3 | hara       | teja      |     1
+(4 rows)
+
+phone=# SELECT U.userid, U.first_name, U.last_name, SUM(referral_points )  FROM User1 U INNER JOIN Referral R ON U.userid=R.userid  GROUP BY u.userID;
+ userid | first_name | last_name | sum  
+--------+------------+-----------+------
+      5 | Vikyanth   | Ms        | 1000
+      4 | uttej      | sai       | 1000
+      1 | rahul      | varma     | 2000
+      3 | hara       | teja      | 1000
+(4 rows)
+
+phone=# SELECT first_name,last_name, mobile FROM User1 WHERE userid IN (SELECT userid FROM BuyingDetails WHERE purchase_date='2022-09-21');
+ first_name | last_name | mobile 
+------------+-----------+--------
+ uttej      | sai       |  99656
+ Vikyanth   | Ms        |  79626
+(2 rows)
+
+phone=#  SELECT * FROM Customer C INNER JOIN BuyingDetails B ON C.customerID =B.customerID WHERE product_name='Iphone 14';
+ customerid | first_name | last_name |       email        | mobile | customerid | userid | purchase_date | product_name 
+------------+------------+-----------+--------------------+--------+------------+--------+---------------+--------------
+       1001 | Virat      | Kohli     | kohli@gmail.com    |  93564 |       1001 |      5 | 2022-09-21    | Iphone 14
+       1003 | ankit      | lal       | ankitlal@gmail.com |  45621 |       1003 |      1 | 2022-07-04    | Iphone 14
+(2 rows)
+
+phone=# SELECT * FROM Customer;
+ customerid | first_name | last_name |       email        | mobile 
+------------+------------+-----------+--------------------+--------
+       1001 | Virat      | Kohli     | kohli@gmail.com    |  93564
+       1002 | DHONI      | MS        | dhoni@gmail.com    |  83261
+       1003 | ankit      | lal       | ankitlal@gmail.com |  45621
+       1004 | rick       | roll      | rick@gmail.com     |  84856
+       1005 | odin       | rock      | odin@gmail.com     |  56485
+(5 rows)
+
+phone=#  CREATE VIEW userview AS SELECT first_name, last_name, mobile, email FROM User1;
+CREATE VIEW
+phone=# SELECT * FROM userview;
+ first_name | last_name | mobile |       email        
+------------+-----------+--------+--------------------
+ rahul      | varma     |  63009 | rahul@gmail.com
+ sameer     | shaik     |  78963 | sameer@gmail.com
+ hara       | teja      |  89652 | harateja@gmail.com
+ uttej      | sai       |  99656 | uttejsai@gmail.com
+ Vikyanth   | Ms        |  79626 | vikyanth@gmail.com
+(5 rows)
+
+phone=# SELECT * FROM userview WHERE email='rahul@gmail.com' OR email='sameer@gmail.com';
+ first_name | last_name | mobile |      email       
+------------+-----------+--------+------------------
+ rahul      | varma     |  63009 | rahul@gmail.com
+ sameer     | shaik     |  78963 | sameer@gmail.com
+(2 rows)
+
+phone=# SELECT * FROM userview WHERE mobile IN (63009, 89652,79626);
+ first_name | last_name | mobile |       email        
+------------+-----------+--------+--------------------
+ rahul      | varma     |  63009 | rahul@gmail.com
+ hara       | teja      |  89652 | harateja@gmail.com
+ Vikyanth   | Ms        |  79626 | vikyanth@gmail.com
+(3 rows)
+
+phone=# 

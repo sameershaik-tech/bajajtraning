@@ -1,0 +1,578 @@
+Last login: Fri Jan 13 12:23:43 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+L-LP47KH3QG7:~ shaiksameer$ /Library/PostgreSQL/15/scripts/runpsql.sh; exit
+Server [localhost]: 
+Database [postgres]: 
+Port [5432]: 
+Username [postgres]: 
+Password for user postgres: 
+psql (15.1)
+Type "help" for help.
+
+postgres=# 
+postgres=# \list OR \|
+                                      List of databases
+ Name | Owner | Encoding | Collate | Ctype | ICU Locale | Locale Provider | Access privileges 
+------+-------+----------+---------+-------+------------+-----------------+-------------------
+(0 rows)
+
+invalid command \|
+Try \? for help.
+postgres=# CREATE DATABASE dbfinserv
+postgres-# \list OR \|
+                                      List of databases
+ Name | Owner | Encoding | Collate | Ctype | ICU Locale | Locale Provider | Access privileges 
+------+-------+----------+---------+-------+------------+-----------------+-------------------
+(0 rows)
+
+...skipping...
+                                      List of databases
+ Name | Owner | Encoding | Collate | Ctype | ICU Locale | Locale Provider | Access privileges 
+------+-------+----------+---------+-------+------------+-----------------+-------------------
+(0 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+invalid command \|
+Try \? for help.
+postgres-# \list 
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+postgres-# \list 
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+postgres-# \list
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+postgres-# CREATE DATABSE dbfinserV
+postgres-# CREATE DATABASE dbfinserV
+postgres-# \l
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+                                            List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+-----------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     |            | libc            | 
+ template0 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+           |          |          |         |       |            |                 | postgres=CTc/postgres
+(3 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+postgres-# CREATE DATABASE dbfinserv;
+ERROR:  syntax error at or near "CREATE"
+LINE 2: CREATE DATABSE dbfinserV
+        ^
+postgres=# CREATE DATABASE dbfinserVV;
+CREATE DATABASE
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c dbfinserVV;
+connection to server at "localhost" (::1), port 5432 failed: could not initiate GSSAPI security context:  Miscellaneous failure (see text): Matching credential (krbtgt/LOCAL@BFL.COM) not found
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "dbfinserVV" does not exist
+Previous connection kept
+postgres=# \d
+Did not find any relations.
+postgres=# CREATE TABLE employee( eid INT PRIMARY KEY NOT NULL, ename TEXT NOT NULL, salary REAL);
+CREATE TABLE
+postgres=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | employee | table | postgres
+(1 row)
+
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | employee | table | postgres
+(1 row)
+
+postgres=# \d employee;
+              Table "public.employee"
+ Column |  Type   | Collation | Nullable | Default 
+--------+---------+-----------+----------+---------
+ eid    | integer |           | not null | 
+ ename  | text    |           | not null | 
+ salary | real    |           |          | 
+Indexes:
+    "employee_pkey" PRIMARY KEY, btree (eid)
+
+postgres=# INSERT INTO employee(1,'sameer',10000);
+ERROR:  syntax error at or near "1"
+LINE 1: INSERT INTO employee(1,'sameer',10000);
+                             ^
+postgres=# INSERT INTO employee (eid,ename,salary) values(101,'sameer',90);
+INSERT 0 1
+postgres=# INSERT INTO employee (102,'rahul',80);
+ERROR:  syntax error at or near "102"
+LINE 1: INSERT INTO employee (102,'rahul',80);
+                              ^
+postgres=# INSERT INTO employee(102,'rahul',80);
+ERROR:  syntax error at or near "102"
+LINE 1: INSERT INTO employee(102,'rahul',80);
+                             ^
+postgres=# INSERT INTO employee valuese(102,'rahul',80);
+ERROR:  syntax error at or near "valuese"
+LINE 1: INSERT INTO employee valuese(102,'rahul',80);
+                             ^
+postgres=# INSERT INTO employee values(102,'rahul',80);
+INSERT 0 1
+postgres=# INSERT INTO employee values(102,'rah');
+ERROR:  duplicate key value violates unique constraint "employee_pkey"
+DETAIL:  Key (eid)=(102) already exists.
+postgres=# INSERT INTO employee values(103,'rah');
+INSERT 0 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | rah    |       
+(3 rows)
+
+postgres=# DELETE FROM EMPLOYEE WHERE ID=103;
+ERROR:  column "id" does not exist
+LINE 1: DELETE FROM EMPLOYEE WHERE ID=103;
+                                   ^
+HINT:  Perhaps you meant to reference the column "employee.eid".
+postgres=# DELETE FROM EMPLOYEE WHERE EID=103;
+DELETE 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+(2 rows)
+
+postgres=# INSERT INTO employee values(103,'VIRAT',100);
+INSERT 0 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+(3 rows)
+
+postgres=# INSERT INTO employee values(104,'DHONI',100);
+INSERT 0 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+(4 rows)
+
+postgres=# INSERT INTO employee values(106,'DHONI',100;105,'PANT',89);
+ERROR:  syntax error at or near ";"
+LINE 1: INSERT INTO employee values(106,'DHONI',100;105,'PANT',89);
+                                                   ^
+postgres=# INSERT INTO employee values(106,'DHONI',100;105,'PANT',89;);
+ERROR:  syntax error at or near ";"
+LINE 1: INSERT INTO employee values(106,'DHONI',100;105,'PANT',89;);
+                                                   ^
+postgres=# INSERT INTO employee values(106,'DHONI',100,105,'PANT',89);
+ERROR:  INSERT has more expressions than target columns
+LINE 1: INSERT INTO employee values(106,'DHONI',100,105,'PANT',89);
+                                                    ^
+postgres=# INSERT INTO employee values(106,'DHONI',100),(105,'PANT',89),(109,'SNEHA',68);
+INSERT 0 3
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 106 | DHONI  |    100
+ 105 | PANT   |     89
+ 109 | SNEHA  |     68
+(7 rows)
+
+postgres=# UPDATE employee set salary=1000000000000000000 where eid=109;
+UPDATE 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 106 | DHONI  |    100
+ 105 | PANT   |     89
+ 109 | SNEHA  |  1e+18
+(7 rows)
+
+postgres=# UPDATE employee set ename='srk' where eid=106;
+UPDATE 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 105 | PANT   |     89
+ 109 | SNEHA  |  1e+18
+ 106 | srk    |    100
+(7 rows)
+
+postgres=# UPDATE employee set ename='sneha' where eid=106;
+UPDATE 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 105 | PANT   |     89
+ 109 | SNEHA  |  1e+18
+ 106 | sneha  |    100
+(7 rows)
+
+postgres=# UPDATE employee set eid=107 where eid=109;
+UPDATE 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 105 | PANT   |     89
+ 106 | sneha  |    100
+ 107 | SNEHA  |  1e+18
+(7 rows)
+
+postgres=# INSERT INTO values(110,'david',8989);
+ERROR:  syntax error at or near "110"
+LINE 1: INSERT INTO values(110,'david',8989);
+                           ^
+postgres=# INSERT INTO employee values(110,'david',8989);
+INSERT 0 1
+postgres=# SELECT * FROM EMPLOYEE;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | sameer |     90
+ 102 | rahul  |     80
+ 103 | VIRAT  |    100
+ 104 | DHONI  |    100
+ 105 | PANT   |     89
+ 106 | sneha  |    100
+ 107 | SNEHA  |  1e+18
+ 110 | david  |   8989
+(8 rows)
+
+postgres=# 

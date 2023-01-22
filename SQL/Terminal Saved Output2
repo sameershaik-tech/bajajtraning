@@ -1,0 +1,742 @@
+Last login: Sat Jan 14 12:27:24 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+L-LP47KH3QG7:~ shaiksameer$ /Library/PostgreSQL/15/scripts/runpsql.sh; exit
+Server [localhost]: 
+Database [postgres]: 
+Port [5432]: 
+Username [postgres]: 
+Password for user postgres: 
+psql (15.1)
+Type "help" for help.
+
+postgres=# \L
+invalid command \L
+Try \? for help.
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# CREATE DATABASE test;
+CREATE DATABASE
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ test       | postgres | UTF8     | C       | C     |            | libc            | 
+(5 rows)
+
+postgres=# DROP DATABASE test;
+DROP DATABASE
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# CREATE DATABASE test;
+CREATE DATABASE
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ test       | postgres | UTF8     | C       | C     |            | libc            | 
+(5 rows)
+
+postgres=# DROP TABLE test
+postgres-# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ test       | postgres | UTF8     | C       | C     |            | libc            | 
+(5 rows)
+
+postgres-# DROP DATABASE test;
+ERROR:  syntax error at or near "DROP"
+LINE 2: DROP DATABASE test;
+        ^
+postgres=# DROP DATABASE test;
+DROP DATABASE
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# CREATE DATABSE dept;
+ERROR:  syntax error at or near "DATABSE"
+LINE 1: CREATE DATABSE dept;
+               ^
+postgres=# CREATE DATABASE dept;
+CREATE DATABASE
+postgres=# \L
+invalid command \L
+Try \? for help.
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ dept       | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(5 rows)
+
+postgres=# \C 
+Title is unset.
+postgres=# \C dbfinserv;
+Title is "dbfinserv".
+postgres=# \c dbfinserv
+connection to server at "localhost" (::1), port 5432 failed: could not initiate GSSAPI security context:  Miscellaneous failure (see text): Matching credential (krbtgt/LOCAL@BFL.COM) not found
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "dbfinserv" does not exist
+Previous connection kept
+postgres=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ dept       | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(5 rows)
+
+postgres=# \c dbfinservv
+You are now connected to database "dbfinservv" as user "postgres".
+dbfinservv=# \d
+Did not find any relations.
+dbfinservv=# \c postgres
+You are now connected to database "postgres" as user "postgres".
+postgres=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | dept     | table | postgres
+ public | employee | table | postgres
+(2 rows)
+
+postgres=# \c dbfinservv
+You are now connected to database "dbfinservv" as user "postgres".
+dbfinservv=# CREATE TABLE employee(eid INT PRIMARY KEY NOT NULL,ename TEXT NOT NULL,salary REAL);
+CREATE TABLE
+dbfinservv=# \L
+invalid command \L
+Try \? for help.
+dbfinservv=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | employee | table | postgres
+(1 row)
+
+dbfinservv=# CREATE TABLE dept(did INT PRIMARY KEY NOT NULL,ename TEXT NOT NULL);
+CREATE TABLE
+dbfinservv=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | dept     | table | postgres
+ public | employee | table | postgres
+(2 rows)
+
+dbfinservv=# INSERT INTO employee values(1,'sameer',90);
+INSERT 0 1
+dbfinservv=# \l
+                                             List of databases
+    Name    |  Owner   | Encoding | Collate | Ctype | ICU Locale | Locale Provider |   Access privileges   
+------------+----------+----------+---------+-------+------------+-----------------+-----------------------
+ dbfinservv | postgres | UTF8     | C       | C     |            | libc            | 
+ dept       | postgres | UTF8     | C       | C     |            | libc            | 
+ postgres   | postgres | UTF8     | C       | C     |            | libc            | 
+ template0  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+ template1  | postgres | UTF8     | C       | C     |            | libc            | =c/postgres          +
+            |          |          |         |       |            |                 | postgres=CTc/postgres
+(5 rows)
+
+dbfinservv=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | dept     | table | postgres
+ public | employee | table | postgres
+(2 rows)
+
+dbfinservv=# INSERT INTO employee values(2,'rahul',89),(3,'sneha',809),(4,'sunny',9090);
+INSERT 0 3
+dbfinservv=# SELECT * FROM employee;
+       dbfinserv
+ eid | ename  | salary 
+-----+--------+--------
+   1 | sameer |     90
+   2 | rahul  |     89
+   3 | sneha  |    809
+   4 | sunny  |   9090
+(4 rows)
+
+dbfinservv=# INSERT INTO dept values(1,d1),(2,d2),(3,d3);
+ERROR:  column "d1" does not exist
+LINE 1: INSERT INTO dept values(1,d1),(2,d2),(3,d3);
+                                  ^
+dbfinservv=# INSERT INTO dept values(1,'d1'),(2,'d2'),(3,'d3');
+INSERT 0 3
+dbfinservv=# SELECT * FROM dept;
+  dbfinserv
+ did | ename 
+-----+-------
+   1 | d1
+   2 | d2
+   3 | d3
+(3 rows)
+
+dbfinservv=# ALTER TABLE employee ADD did INT PRIMARY KEY;
+ERROR:  multiple primary keys for table "employee" are not allowed
+dbfinservv=# ALTER TABLE dept RENAME COLUMN ename TO dname;
+ALTER TABLE
+dbfinservv=# SELECT * FROM dept;
+  dbfinserv
+ did | dname 
+-----+-------
+   1 | d1
+   2 | d2
+   3 | d3
+(3 rows)
+
+dbfinservv=# SELECT * FROM employee;
+       dbfinserv
+ eid | ename  | salary 
+-----+--------+--------
+   1 | sameer |     90
+   2 | rahul  |     89
+   3 | sneha  |    809
+   4 | sunny  |   9090
+(4 rows)
+
+dbfinservv=# ALTER TABLE employee ADD did INT;
+ALTER TABLE
+dbfinservv=# UPDATE employee SET did=1 where eid=1;
+UPDATE 1
+dbfinservv=# UPDATE employee SET did=1 where eid=2;
+UPDATE 1
+dbfinservv=# UPDATE employee SET did=3 where eid=3;
+UPDATE 1
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   4 | sunny  |   9090 |    
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(4 rows)
+
+dbfinservv=# UPDATE employee SET did=2 where eid=4;
+UPDATE 1
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=#  ALTER TABLE employee ADD FOREIGN KEY(did) REFERENCES dept(did);
+ALTER TABLE
+dbfinservv=# SELECT ename FROM employee e INNER JOIN dept d ON e.did==d.did;
+ERROR:  operator does not exist: integer == integer
+LINE 1: ...ECT ename FROM employee e INNER JOIN dept d ON e.did==d.did;
+                                                               ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+dbfinservv=# SELECT ename FROM employee e INNER JOIN dept d ON e.did=d.did;
+dbfinserv
+ ename  
+--------
+ sameer
+ rahul
+ sneha
+ sunny
+(4 rows)
+
+dbfinservv=# SELECT ename FROM employee e LEFT JOIN dept d ON e.did=d.did;
+dbfinserv
+ ename  
+--------
+ sameer
+ rahul
+ sneha
+ sunny
+(4 rows)
+
+dbfinservv=# SELECT ename d.did FROM employee e FULL OUTER JOIN dept d on e.did=d.did;
+ERROR:  syntax error at or near "."
+LINE 1: SELECT ename d.did FROM employee e FULL OUTER JOIN dept d on...
+                      ^
+dbfinservv=# SELECT ename, d.did FROM employee e FULL OUTER JOIN dept d on e.did=d.did;
+  dbfinserv
+ ename  | did 
+--------+-----
+ sameer |   1
+ rahul  |   1
+ sneha  |   3
+ sunny  |   2
+(4 rows)
+
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary>(SELECT AVG(salary) FROM employee WHERE did=e1.did);
+ERROR:  missing FROM-clause entry for table "e1"
+LINE 1: ... salary>(SELECT AVG(salary) FROM employee WHERE did=e1.did);
+                                                               ^
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary>(SELECT AVG(salary) FROM employee WHERE did=e.did);
+  dbfinserv
+ ename  | did 
+--------+-----
+ sameer |   1
+(1 row)
+
+dbfinservv=# SELECT * FROM dept;
+  dbfinserv
+ did | dname 
+-----+-------
+   1 | d1
+   2 | d2
+   3 | d3
+(3 rows)
+
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary>(SELECT AVG(salary) FROM employee WHERE did!=e.did);
+  dbfinserv
+ ename | did 
+-------+-----
+ sunny |   2
+(1 row)
+
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary>(SELECT AVG(salary) FROM employee WHERE did>e.did);
+  dbfinserv
+ ename | did 
+-------+-----
+ sunny |   2
+(1 row)
+
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary>(SELECT AVG(salary) FROM employee WHERE did<e.did);
+  dbfinserv
+ ename | did 
+-------+-----
+ sunny |   2
+(1 row)
+
+dbfinservv=# SELECT ename,did FROM employee e WHERE salary<(SELECT AVG(salary) FROM employee WHERE did<e.did);
+  dbfinserv
+ ename | did 
+-------+-----
+ sneha |   3
+(1 row)
+
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# DELETE FROM employee where eid=1;
+DELETE 1
+dbfinservv=*# SELECT * FROM employee;
+         dbfinserv
+ eid | ename | salary | did 
+-----+-------+--------+-----
+   2 | rahul |     89 |   1
+   3 | sneha |    809 |   3
+   4 | sunny |   9090 |   2
+(3 rows)
+
+dbfinservv=*# ROLLBACK;
+ROLLBACK
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# INSERT INTO employee values(5,'snehas',987654,2);
+INSERT 0 1
+dbfinservv=*# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+   5 | snehas | 987654 |   2
+(5 rows)
+
+dbfinservv=*# ROLLBACK;
+ROLLBACK
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# INSERT INTO employee values(7,'snehak',87654,2);
+INSERT 0 1
+dbfinservv=*# SAVEPOINT S;
+SAVEPOINT
+dbfinservv=*# ROLLBACK;
+ROLLBACK
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sunny  |   9090 |   2
+(4 rows)
+
+dbfinservv=# DELETE FROM employee where eid=4;
+DELETE 1
+dbfinservv=# INSERT INTO employee values(4,'sam',9809876,6);
+ERROR:  insert or update on table "employee" violates foreign key constraint "employee_did_fkey"
+DETAIL:  Key (did)=(6) is not present in table "dept".
+dbfinservv=# INSERT INTO employee values(4,'sam',980,6);
+ERROR:  insert or update on table "employee" violates foreign key constraint "employee_did_fkey"
+DETAIL:  Key (did)=(6) is not present in table "dept".
+dbfinservv=# INSERT INTO employee values(4,'sam',980,1);
+INSERT 0 1
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sam    |    980 |   1
+(4 rows)
+
+dbfinservv=# ROLLBACk to s;
+ERROR:  ROLLBACK TO SAVEPOINT can only be used in transaction blocks
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# ROLLBACk to s;
+ERROR:  savepoint "s" does not exist
+dbfinservv=!# BEGIN;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+dbfinservv=!# ;
+dbfinservv=!# COMMIT;
+ROLLBACK
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# INSERT INTO employee values(4,'sam2',9820,2);
+ERROR:  duplicate key value violates unique constraint "employee_pkey"
+DETAIL:  Key (eid)=(4) already exists.
+dbfinservv=!# INSERT INTO employee values(6,'sam2',9820,2);
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+dbfinservv=!# SELECT * FROM employee;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+dbfinservv=!# COMMIT;
+ROLLBACK
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+   4 | sam    |    980 |   1
+(4 rows)
+
+dbfinservv=# BEGIN;
+BEGIN
+dbfinservv=*# DELETE FROM employee where eid=4;
+DELETE 1
+dbfinservv=*# SAVEPOINT S1;
+SAVEPOINT
+dbfinservv=*# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(3 rows)
+
+dbfinservv=*# INSERT INTO employee values(5,'kholi',7878,2);
+INSERT 0 1
+dbfinservv=*# INSERT INTO employee values(6,'anu',878,1);
+INSERT 0 1
+dbfinservv=*# ROLLBACK TO S1;
+ROLLBACK
+dbfinservv=*# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(3 rows)
+
+dbfinservv=*# COMMIT;
+COMMIT
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(3 rows)
+
+dbfinservv=# CREATE INDEX employeeindex  on employee(ename);
+CREATE INDEX
+dbfinservv=# EXPLIAN SELECT * FROM employee where ename='sameer';
+ERROR:  syntax error at or near "EXPLIAN"
+LINE 1: EXPLIAN SELECT * FROM employee where ename='sameer';
+        ^
+dbfinservv=# EXPLAIN SELECT * FROM employee where ename='sameer';
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (ename = 'sameer'::text)
+(2 rows)
+
+dbfinservv=# EXPLAIN SELECT * FROM employee where ename='sneha';
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (ename = 'sneha'::text)
+(2 rows)
+
+dbfinservv=# EXPLAIN SELECT * FROM employee where ename='rahul';
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (ename = 'rahul'::text)
+(2 rows)
+
+dbfinservv=# CREATE INDEX employeeindex on employee(salary);
+ERROR:  relation "employeeindex" already exists
+dbfinservv=# CREATE INDEX employeeinde on employee(salary);
+CREATE INDEX
+dbfinservv=# EXPLAIN SELECT * FROM employee where salary=90;
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (salary = '90'::double precision)
+(2 rows)
+
+dbfinservv=# DROP EMPLOYEEINDEX;
+ERROR:  syntax error at or near "EMPLOYEEINDEX"
+LINE 1: DROP EMPLOYEEINDEX;
+             ^
+dbfinservv=# DROP employeeinde;
+ERROR:  syntax error at or near "employeeinde"
+LINE 1: DROP employeeinde;
+             ^
+dbfinservv=# DROP INDEX employeeinde;
+DROP INDEX
+dbfinservv=# EXPLAIN SELECT * FROM employee where ename='sameer';
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (ename = 'sameer'::text)
+(2 rows)
+
+dbfinservv=# CREATE INDEX employeeinde ON employee(enam);
+ERROR:  column "enam" does not exist
+dbfinservv=# CREATE INDEX employeeinde ON employee(ename);
+CREATE INDEX
+dbfinservv=# EXPLAIN SELECT * FROM employee where ename='sameer';
+                        dbfinserv
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Seq Scan on employee  (cost=0.00..1.04 rows=1 width=44)
+   Filter: (ename = 'sameer'::text)
+(2 rows)
+
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(3 rows)
+
+dbfinservv=# CREATE VIEW empSalaray AS SELECT ename,salary from employee;
+CREATE VIEW
+dbfinservv=# SELECT * FROM empSalary;
+ERROR:  relation "empsalary" does not exist
+LINE 1: SELECT * FROM empSalary;
+                      ^
+dbfinservv=# SELECT * FROM empSalaray;
+    dbfinserv
+ ename  | salary 
+--------+--------
+ sameer |     90
+ rahul  |     89
+ sneha  |    809
+(3 rows)
+
+dbfinservv=# INSERT INTO empSalaray values(5,'shaik',78,3);
+ERROR:  INSERT has more expressions than target columns
+LINE 1: INSERT INTO empSalaray values(5,'shaik',78,3);
+                                                ^
+dbfinservv=# INSERT INTO empSalaray values(5,'shaik');
+ERROR:  invalid input syntax for type real: "shaik"
+LINE 1: INSERT INTO empSalaray values(5,'shaik');
+                                        ^
+dbfinservv=# INSERT INTO empSalaray values('shaik',37);
+ERROR:  null value in column "eid" of relation "employee" violates not-null constraint
+DETAIL:  Failing row contains (null, shaik, 37, null).
+dbfinservv=# INSERT INTO empSalaray values('shaik',37);
+ERROR:  null value in column "eid" of relation "employee" violates not-null constraint
+DETAIL:  Failing row contains (null, shaik, 37, null).
+dbfinservv=# INSERT INTO empSalaray values(1,'shaik',37);
+ERROR:  INSERT has more expressions than target columns
+LINE 1: INSERT INTO empSalaray values(1,'shaik',37);
+                                                ^
+dbfinservv=# DROP empSalaray;
+ERROR:  syntax error at or near "empSalaray"
+LINE 1: DROP empSalaray;
+             ^
+dbfinservv=# DROP VIEW empSalaray;
+DROP VIEW
+dbfinservv=# SELECT * FROM empSalaray;
+ERROR:  relation "empsalaray" does not exist
+LINE 1: SELECT * FROM empSalaray;
+                      ^
+dbfinservv=# SELECT * FROM employee;
+          dbfinserv
+ eid | ename  | salary | did 
+-----+--------+--------+-----
+   1 | sameer |     90 |   1
+   2 | rahul  |     89 |   1
+   3 | sneha  |    809 |   3
+(3 rows)
+
+dbfinservv=# CREATE VIEW empsal AS SELECT eid,ename FROM employee;
+CREATE VIEW
+dbfinservv=# SELECT * FROM empsal;
+  dbfinserv
+ eid | ename  
+-----+--------
+   1 | sameer
+   2 | rahul
+   3 | sneha
+(3 rows)
+
+dbfinservv=# CREATE TABLE testarray(mnumbers TEXT[], ename TEXT);
+CREATE TABLE
+dbfinservv=# INSERT INTO testarray values(ARRAY['9096','9090',],'sameer;);
+dbfinservv'# SELECT * FROM testarray;
+dbfinservv'# ;
+dbfinservv'# hk
+dbfinservv'# ;
+dbfinservv'# SELECT * FROM empsal;
+dbfinservv'# ;
+dbfinservv'# CREATE VIEW empsal AS SELECT eid,ename FROM employee;
+dbfinservv'# ;;;
+dbfinservv'# '
+dbfinservv(# 
+dbfinservv(# 0);
+ERROR:  syntax error at or near "]"
+LINE 1: INSERT INTO testarray values(ARRAY['9096','9090',],'sameer;)...
+                                                         ^
+dbfinservv=# INSERT INTO testarray values(ARRAY[1,2,3,3333],'sameer');
+INSERT 0 1
+dbfinservv=# SELECT * FROM testarray;
+       dbfinserv
+   mnumbers   | ename  
+--------------+--------
+ {1,2,3,3333} | sameer
+(1 row)
+
+dbfinservv=# INSERT INTO testarray values(ARRAY[1,2,3,3],'sa');
+INSERT 0 1
+dbfinservv=# SELECT * FROM testarray;
+       dbfinserv
+   mnumbers   | ename  
+--------------+--------
+ {1,2,3,3333} | sameer
+ {1,2,3,3}    | sa
+(2 rows)
+
+dbfinservv=# 
